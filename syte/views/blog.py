@@ -57,7 +57,7 @@ def blog(request):
     print '='*50
     # print json.dumps(client.dashboard(), indent=2)
 
-    return HttpResponse(content=json.dumps(client.dashboard()), status=r.status_code,
+    return HttpResponse(content=json.dumps(client.dashboard(offset=offset)), status=r.status_code,
                         content_type=r.headers['content-type'])
 
 
