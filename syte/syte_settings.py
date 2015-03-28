@@ -6,20 +6,20 @@ COMPRESS_REVISION_NUMBER = '1.0'
 
 BLOG_PLATFORM = 'tumblr'  # Wordpress or tumblr
 
-#Blog Integration: Tumblr
+# Blog Integration: Tumblr
 TUMBLR_BLOG_URL = 'jakemadisonwork.tumblr.com'
 TUMBLR_API_URL = 'http://api.tumblr.com/v2/blog/{0}'.format(TUMBLR_BLOG_URL)
 TUMBLR_API_KEY = key_config.tumblr_consumer_key
 
-#Blog Integration: Wordpress
-WORDPRESS_BLOG_URL = '[ENTER WORDPRESS BLOG URL] ex. gordonkoo.wordpress.com'
-WORDPRESS_API_URL = 'https://public-api.wordpress.com/rest/v1/sites/{0}'.format(WORDPRESS_BLOG_URL)
+# Blog Integration: Wordpress
+# WORDPRESS_BLOG_URL = '[ENTER WORDPRESS BLOG URL] ex. gordonkoo.wordpress.com'
+# WORDPRESS_API_URL = 'https://public-api.wordpress.com/rest/v1/sites/{0}'.format(WORDPRESS_BLOG_URL)
 
-#RSS Feed Integration: (by default use Tumblr rss feed)
+# RSS Feed Integration: (by default use Tumblr rss feed)
 RSS_FEED_ENABLED = True
 RSS_FEED_URL = 'http://{0}/rss'.format(TUMBLR_BLOG_URL)
 
-#Twitter Integration
+# Twitter Integration
 TWITTER_INTEGRATION_ENABLED = True
 TWITTER_API_URL = 'https://api.twitter.com/'
 TWITTER_CONSUMER_KEY = '[ENTER TWITTER CONSUMER KEY HERE, SEE TWITTER SETUP INSTRUCTIONS]'
@@ -28,7 +28,7 @@ TWITTER_USER_KEY = '[ENTER TWITTER USER KEY HERE, SEE TWITTER SETUP INSTRUCTIONS
 TWITTER_USER_SECRET = '[ENTER TWITTER USER SECRET HERE, SEE TWITTER SETUP INSTRUCTIONS]'
 
 
-#Github Integration
+# Github Integration
 GITHUB_INTEGRATION_ENABLED = True
 GITHUB_API_URL = 'https://api.github.com/'
 GITHUB_ACCESS_TOKEN = '[ENTER GITHUB ACCESS TOKEN HERE, SEE GITHUB SETUP INSTRUCTIONS]'
