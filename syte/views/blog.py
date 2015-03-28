@@ -10,6 +10,7 @@ from django.http import HttpResponse
 from datetime import datetime
 from pybars import Compiler
 from HTMLParser import HTMLParser
+from syte import key_config
 
 
 # Takes a response (e.g. from Wordpress) and converts it into a format that
@@ -35,10 +36,24 @@ def convertWordpressResponse(post):
 
 def blog(request):
     offset = request.GET.get('o', 0)
+
+    new_tumblr_url = 'http://api.tumblr.com/v2/user/dashboard'
+
     r = requests.get('{0}/posts?api_key={1}&offset={2}'.format(
         settings.TUMBLR_API_URL, settings.TUMBLR_API_KEY, offset))
-    return HttpResponse(content=r.text, status=r.status_code,
+
+    client = key_config.tumblr_client
+    # print client.dashboard()
+
+    # r = requests.get(new_tumblr_url+'?api_key={0}&offset={1}'.format(settings.TUMBLR_API_KEY, offset))
+
+    #
+    #
+    # return HttpResponse(content=r.text, status=r.status_code,
+    #                     content_type=r.headers['content-type'])
+    return HttpResponse(content=client.dashboard(), status=r.status_code,
                         content_type=r.headers['content-type'])
+
 
 
 def blog_post(request, post_id):
