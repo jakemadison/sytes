@@ -1,5 +1,8 @@
 
 function setupTwitter(url, el) {
+
+    console.log('setting up twitter...', url, el);
+
   var href = el.href;
 
   if ($('#twitter-profile').length > 0) {
@@ -39,7 +42,8 @@ function setupTwitter(url, el) {
             user.statuses_count = numberWithCommas(user.statuses_count);
             user.friends_count = numberWithCommas(user.friends_count);
             user.followers_count = numberWithCommas(user.followers_count);
-            user.f_description = twitterLinkify(user.description);
+            //user.f_description = twitterLinkify(user.description);
+            user.f_description = user.description;
 
             var template_data = {
                 "user": user,
