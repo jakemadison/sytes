@@ -71,13 +71,22 @@ function renderBlogPosts(posts) {
 }
 
 function fetchTumblrBlogPosts(offset, tag) {
+
+    console.log('fetching tumblr blog posts...');
+
   var blog_fetch_url = '/blog.json?o=' + offset;
 
   if (tag)
       blog_fetch_url = '/tags/' + tag + '/?o=' + offset;
 
+
+  console.log('making it here?');
+
   $.getJSON(blog_fetch_url, function(blog_posts) {
-    renderBlogPosts(blog_posts.response.posts);
+
+      console.log('i returned with these blog items: ', blog_posts);
+
+    renderBlogPosts(blog_posts.posts);
   });
 }
 

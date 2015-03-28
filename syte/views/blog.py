@@ -11,6 +11,7 @@ from datetime import datetime
 from pybars import Compiler
 from HTMLParser import HTMLParser
 from syte import key_config
+import json
 
 
 # Takes a response (e.g. from Wordpress) and converts it into a format that
@@ -51,13 +52,21 @@ def blog(request):
     #
     # return HttpResponse(content=r.text, status=r.status_code,
     #                     content_type=r.headers['content-type'])
-    return HttpResponse(content=client.dashboard(), status=r.status_code,
+
+    print json.dumps(json.loads(r.text), indent=2)
+    print '='*50
+    # print json.dumps(client.dashboard(), indent=2)
+
+    return HttpResponse(content=json.dumps(client.dashboard()), status=r.status_code,
                         content_type=r.headers['content-type'])
 
 
 
 def blog_post(request, post_id):
     if settings.BLOG_PLATFORM == 'tumblr':
+
+        print 'I get called when a single post is selected.'
+
         r = requests.get('{0}/posts?api_key={1}&id={2}'.format(
             settings.TUMBLR_API_URL, settings.TUMBLR_API_KEY, post_id))
 
