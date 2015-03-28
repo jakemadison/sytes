@@ -4,3 +4,4 @@
 personal_syte_settings.py
 .elasticbeanstalk/
 .vagrant/
+syte/key_config.py
