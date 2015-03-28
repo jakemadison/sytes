@@ -1,6 +1,6 @@
 # Syte
 
-    Syte is a really simple but powerful packaged personal site that has social integrations like Twitter, GitHub, Dribbble, Instagram, Foursquare, Tumblr, Wordpress, Linkedin, Spotify/Last.fm, SoundCloud, Bitbucket, StackOverflow, Flickr and Steam. You can see it in action on [on this guy's personal site](http://rigoneri.com).
+>Syte is a really simple but powerful packaged personal site that has social integrations like Twitter, GitHub, Dribbble, Instagram, Foursquare, Tumblr, Wordpress, Linkedin, Spotify/Last.fm, SoundCloud, Bitbucket, StackOverflow, Flickr and Steam. You can see it in action on [on this guy's personal site](http://rigoneri.com).
 
 
 This repo, which I've created as a standalone (hope that's cool....), turns syte on it's head, and instead is used for consuming content from those sites.
