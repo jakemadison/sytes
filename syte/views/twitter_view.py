@@ -14,7 +14,8 @@ def twitter_view(request, username):
 
     print 'getting twitter data'
 
-    statuses = api.GetUserTimeline(username, include_rts=True, exclude_replies=True, count=50)
+    # statuses = api.GetUserTimeline(username, include_rts=True, exclude_replies=True, count=50)
+    statuses = api.GetHomeTimeline(username, exclude_replies=True)
 
     print 'statuses: ', statuses
 
