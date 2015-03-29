@@ -71,11 +71,17 @@ def instagram(request):
 
 
 def instagram_next(request, max_id):
-    media_r = requests.get('{0}users/{1}/media/recent/?access_token={2}&max_id={3}'.format(
+    # media_r = requests.get('{0}users/{1}/media/recent/?access_token={2}&max_id={3}'.format(
+    #     settings.INSTAGRAM_API_URL,
+    #     settings.INSTAGRAM_USER_ID,
+    #     settings.INSTAGRAM_ACCESS_TOKEN,
+    #     max_id))
+    #
+    media_r = requests.get('{0}users/self/feed?access_token={1}&max_id={2}'.format(
         settings.INSTAGRAM_API_URL,
-        settings.INSTAGRAM_USER_ID,
         settings.INSTAGRAM_ACCESS_TOKEN,
         max_id))
+
     media_data = json.loads(media_r.text)
 
     context = {
