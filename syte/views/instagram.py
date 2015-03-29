@@ -48,10 +48,16 @@ def instagram(request):
         settings.INSTAGRAM_ACCESS_TOKEN))
     user_data = json.loads(user_r.text)
 
-    media_r = requests.get('{0}users/{1}/media/recent/?access_token={2}'.format(
+    # media_r = requests.get('{0}users/{1}/media/recent/?access_token={2}'.format(
+    #     settings.INSTAGRAM_API_URL,
+    #     settings.INSTAGRAM_USER_ID,
+    #     settings.INSTAGRAM_ACCESS_TOKEN))
+    #
+
+    media_r = requests.get('{0}users/self/feed?access_token={1}'.format(
         settings.INSTAGRAM_API_URL,
-        settings.INSTAGRAM_USER_ID,
         settings.INSTAGRAM_ACCESS_TOKEN))
+
     media_data = json.loads(media_r.text)
 
     context = {
