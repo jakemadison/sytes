@@ -60,11 +60,15 @@ def instagram(request):
 
     media_data = json.loads(media_r.text)
 
+
     context = {
         'user': user_data.get('data', None),
         'media': media_data.get('data', None),
         'pagination': media_data.get('pagination', None),
     }
+
+    print 'user_data: ', context['user']
+    print 'media_data', json.dumps(context['media'], indent=4)
 
     return HttpResponse(content=json.dumps(context), status=media_r.status_code,
                         content_type=media_r.headers['content-type'])

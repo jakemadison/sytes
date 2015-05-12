@@ -61,6 +61,7 @@ if settings.INSTAGRAM_OAUTH_ENABLED:
         url(r'^instagram/auth/?$', 'syte.views.instagram.instagram_auth'),
     )
 
+
 if settings.INSTAGRAM_INTEGRATION_ENABLED:
     urlpatterns += patterns('',
         url(r'^instagram/(?P<max_id>\w+)/?$', 'syte.views.instagram.instagram_next'),
