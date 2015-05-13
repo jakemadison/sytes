@@ -1,6 +1,8 @@
 {{#each media}}
 <li>
-    {{#with user}}<span class="insta_user"><h6>{{username}}</h6></span>{{/with}}
+    {{#with user}}<span class="insta_user"><h6><img src="{{profile_picture}}" class="mini_pic"/>
+        {{username}} : {{full_name}}</h6></span>
+        {{/with}}
   <a href="{{ link }}" class="profile-shot">
     {{#with images}}
      {{#with low_resolution }}
