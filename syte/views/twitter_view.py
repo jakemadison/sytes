@@ -12,12 +12,13 @@ def twitter_view(request, username):
                       access_token_key=settings.TWITTER_USER_KEY,
                       access_token_secret=settings.TWITTER_USER_SECRET)
 
-    print 'getting twitter data'
+    print 'getting twitter data....... '
 
     # statuses = api.GetUserTimeline(username, include_rts=True, exclude_replies=True, count=50)
     statuses = api.GetHomeTimeline(username, exclude_replies=True)
 
-    print 'statuses: '
+    print 'statuses:'
+    testvar = 'test'
     for status in statuses:
         print status
 
