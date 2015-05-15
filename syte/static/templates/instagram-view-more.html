@@ -1,7 +1,7 @@
 {{#each media}}
 <li>
     {{#with user}}<span class="insta_user"><h6><img src="{{profile_picture}}" class="mini_pic"/>
-        {{username}}{{#if full_name }}: {{full_name}} {{/if}}</h6></span>
+        {{username}}{{#if full_name }} ({{full_name}}){{/if}}</h6></span>
         {{/with}}
   <a href="{{ link }}" class="profile-shot" target="_blank">
     {{#with images}}
@@ -20,8 +20,20 @@
   {{/if}}
   </span>
   <ul class="profile-shot-stats">
-    {{#with likes}}<li><span class="profile-likes">{{ count }}</span></li>{{/with}}
-    <li class="profile-shot-date">{{ formated_date }}</li>
+
+        {{#if user_has_liked}}
+          {{#with likes}}
+              <li><span class="profile-likes-liked">{{ count }}</span></li>
+          {{/with}}
+          {{else}}
+          {{#with likes}}
+              <li><span class="profile-likes">{{ count }}</span></li>
+          {{/with}}
+      {{/if}}
+
+
+
+      <li class="profile-shot-date">{{ formated_date }}</li>
   </ul>
 </li>
 {{/each}}
