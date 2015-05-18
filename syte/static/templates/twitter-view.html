@@ -9,19 +9,19 @@
       <h2><a href="http://twitter.com/#!/twitter_link">Twitter Name will go here</a></h2>
       <h3><a href="http://twitter.com/#!/twitterLink,,,,">Twitter something else here</a></h3>
     </div>
-<!-- <p class="profile-description">{{{ f_description }}}</p> My Desc here-->
+
     <p class="profile-location-url">
-      {{#if location }}
-      <span>{{ location }}</span>
-      <span class="divider">·</span>
-      {{/if}}
-      {{#if url }}
-      <span><a href="{{ url }}">{{ url }}</a></span>
-      {{/if}}
+{#      {{#if location }}#}
+{#      <span>{{ location }}</span>#}
+{#      <span class="divider">·</span>#}
+{#      {{/if}}#}
+{#      {{#if url }}#}
+{#      <span><a href="{{ url }}">{{ url }}</a></span>#}
+{#      {{/if}}#}
     </p>
   </div>
   <ul class="profile-stats">
-    <li><a href="http://twitter.com/#!/{{ screen_name }}"><strong>{{ statuses_count }}</strong> tweets</a></li>
+    <li><a href="http://twitter.com/#!/{{ screen_name }}"><strong>{{ statuses_count }}</strong> </a></li>
     <li><a href="http://twitter.com/#!/{{ screen_name }}/following"><strong>{{ friends_count }}</strong> following</a></li> 
     <li><a href="http://twitter.com/#!/{{ screen_name }}/followers"><strong>{{ followers_count }}</strong> followers</a></li>
   </ul>
