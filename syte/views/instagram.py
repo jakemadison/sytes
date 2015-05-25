@@ -71,8 +71,8 @@ def instagram(request):
     print 'media_data', json.dumps(context['media'], indent=4)
 
     import re
-    for each_hastag in re.findall('#[A-Za-z]+', json.dumps(context['media'])):
-        print 'hashtag: ', each_hastag
+    for each_hastag in re.findall('#[\w]+', json.dumps(context['media'])):
+        print 'hashtag', each_hastag[1:]
 
 
     return HttpResponse(content=json.dumps(context), status=media_r.status_code,
@@ -97,6 +97,11 @@ def instagram_next(request, max_id):
         'media': media_data.get('data', None),
         'pagination': media_data.get('pagination', None),
     }
+
+    import re
+    for each_hastag in re.findall('#[\w]+', json.dumps(context['media'])):
+        print 'hashtag', each_hastag[1:]
+
 
     return HttpResponse(content=json.dumps(context), status=media_r.status_code,
                         content_type=media_r.headers['content-type'])
